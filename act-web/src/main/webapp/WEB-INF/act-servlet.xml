@@ -1,0 +1,70 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+   http://www.springframework.org/schema/beans     
+   http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+   http://www.springframework.org/schema/context 
+   http://www.springframework.org/schema/context/spring-context-4.1.xsd
+   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- <aop:aspectj-autoproxy /> -->
+
+
+	<!-- <context:component-scan base-package="com.bps.mng.controller.audit"> -->
+	<!-- <context:include-filter type="aspectj" expression="com.bps.mng.controller.audit.*" 
+		/> -->
+	<!-- </context:component-scan> -->
+
+	<!-- SERVICE BEANS -->
+	<bean id="userService" class="com.act.model.service.impl.UserServiceImpl" />
+	<!-- <bean id="procService" class="com.bps.model.service.impl.ProcessServiceImpl" 
+		/> -->
+	<!-- <bean id="procVerService" class="com.bps.model.service.impl.ProcessVersionServiceImpl" 
+		/> -->
+	<!-- <bean id="orgService" class="com.bps.model.service.impl.OrganizationServiceImpl" 
+		/> -->
+	<!-- <bean id="orgProcService" -->
+	<!-- class="com.bps.model.service.impl.OrganizationProcessServiceImpl" /> -->
+
+
+	<!-- CONTROLLERS -->
+	<bean name="/actLogin/*" class="com.act.web.controller.LoginController">
+		<property name="userService" ref="userService" />
+	</bean>
+	<!-- <bean name="/mngProcess/*" class="com.bps.mng.controller.ProcessController"> -->
+	<!-- <property name="procService" ref="procService" /> -->
+	<!-- <property name="procVerService" ref="procVerService" /> -->
+	<!-- </bean> -->
+	<!-- <bean name="/mngOrg/*" class="com.bps.mng.controller.OrganizationController"> -->
+	<!-- <property name="orgService" ref="orgService" /> -->
+	<!-- <property name="orgProcService" ref="orgProcService" /> -->
+	<!-- </bean> -->
+	<!-- <bean name="/mngLogAudit/*" class="com.bps.mng.controller.LogAuditController"></bean> -->
+
+	<!-- I18N  -->
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<property name="defaultLocale" value="en" />
+	</bean>
+	<bean id="localeChangeInterceptor"
+		class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+		<property name="paramName" value="language" />
+	</bean>
+	
+	<!-- MESSAGE SOURCE -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="exception" />
+	</bean>
+	
+	<!-- VIEW RESOLVER -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
+        <property name="prefix">
+            <value>/resources/pages/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean>
+</beans>
