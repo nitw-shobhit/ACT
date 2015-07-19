@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="<%= request.getContextPath()%>/resources/css/ngDialog-theme-default.css">
 	<link rel="stylesheet" href="<%= request.getContextPath()%>/resources/css/ui.fancytree.css" >
 	<link rel="stylesheet" href="<%= request.getContextPath()%>/resources/css/act.css">
-	<script src="<%= request.getContextPath()%>/resources/js/jquery-1.10.2.js"></script>
+	<script src="<%= request.getContextPath()%>/resources/js/jquery-1.11.1.min.js"></script>
 	<script src="<%= request.getContextPath()%>/resources/js/bootstrap.js"></script>
 	<script src="<%= request.getContextPath()%>/resources/js/angular.min.js"></script>
 	<script src="<%= request.getContextPath()%>/resources/js/angular-route.min.js"></script>

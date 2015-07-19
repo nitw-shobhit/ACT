@@ -18,29 +18,15 @@
 
 	<!-- SERVICE BEANS -->
 	<bean id="userService" class="com.act.model.service.impl.UserServiceImpl" />
-	<!-- <bean id="procService" class="com.bps.model.service.impl.ProcessServiceImpl" 
-		/> -->
-	<!-- <bean id="procVerService" class="com.bps.model.service.impl.ProcessVersionServiceImpl" 
-		/> -->
-	<!-- <bean id="orgService" class="com.bps.model.service.impl.OrganizationServiceImpl" 
-		/> -->
-	<!-- <bean id="orgProcService" -->
-	<!-- class="com.bps.model.service.impl.OrganizationProcessServiceImpl" /> -->
-
+	<bean id="serverService" class="com.act.model.service.impl.ServerServiceImpl" />
 
 	<!-- CONTROLLERS -->
 	<bean name="/actLogin/*" class="com.act.web.controller.LoginController">
 		<property name="userService" ref="userService" />
 	</bean>
-	<!-- <bean name="/mngProcess/*" class="com.bps.mng.controller.ProcessController"> -->
-	<!-- <property name="procService" ref="procService" /> -->
-	<!-- <property name="procVerService" ref="procVerService" /> -->
-	<!-- </bean> -->
-	<!-- <bean name="/mngOrg/*" class="com.bps.mng.controller.OrganizationController"> -->
-	<!-- <property name="orgService" ref="orgService" /> -->
-	<!-- <property name="orgProcService" ref="orgProcService" /> -->
-	<!-- </bean> -->
-	<!-- <bean name="/mngLogAudit/*" class="com.bps.mng.controller.LogAuditController"></bean> -->
+	<bean name="/actServer/*" class="com.act.web.controller.ServerController">
+		<property name="serverService" ref="serverService" />
+	</bean>
 
 	<!-- I18N  -->
 	<bean id="localeResolver"

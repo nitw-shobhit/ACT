@@ -13,7 +13,8 @@ module.config(function ($stateProvider, $urlRouterProvider, $provide) {
 					controller : 'menuController'
 				},
 				'content' : {
-					templateUrl : '../resources/pages/home.jsp'
+					templateUrl : '../resources/pages/home.jsp',
+						controller : 'homeController'
 				}
 			}
 		}
@@ -57,7 +58,7 @@ module.config(function ($stateProvider, $urlRouterProvider, $provide) {
 				}
 			}
 		}
-  	)
+  	);
 	$urlRouterProvider.otherwise("");
 });
 
@@ -70,6 +71,20 @@ module.controller("userInfoController", function ($scope, $state) {
 module.controller("menuController", function ($scope, $state) {
 	$scope.clickme = function() {
         $state.go('dboard.test');
-	}
+	};
+});
+
+module.controller("homeController", function ($scope, $state) {
+	$.ajax({
+        url: '/act-web/actServer/getAllServers.do',
+        type: 'GET',
+        dataType: 'json',
+        async: false,
+        success: function(data) {
+            $scope.servers = data;
+        }
+    }).fail(function() {
+    	$scope.loading = false;
+    });
 });
 	  
