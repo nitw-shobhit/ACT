@@ -103,7 +103,12 @@
 	font-size: 12px;
 }
 .summaryBox {
-	height: 200px;
-	width: 250px;
+	height: 345px;
+	width: 100%;
 	float: left;
+}
+.userInfoLink {
+	height: 20px;
+	width: 20px;
+	float: right;
 }

@@ -38,6 +38,6 @@
 		<c:otherwise>
 		</c:otherwise>
 	</c:choose>
-	<span class="userInfoNameSpan">${UserBean.userId} (${UserBean.userEmail})</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" popover-template="userInfoDetails.templateUrl" popover-placement="bottom" popover-trigger="mouseenter" ><img src="../resources/images/open-link.ico" height="20" width="20" /></a>
+	<span class="userInfoNameSpan">${UserBean.userId}</span><a href="#" popover-template="userInfoDetails.templateUrl" popover-placement="bottom" popover-trigger="mouseenter" ><img src="../resources/images/open-link.ico" class="userInfoLink" /></a>
 </body>
 </html>
