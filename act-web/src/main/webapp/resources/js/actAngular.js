@@ -1,8 +1,9 @@
 /**
  * Angular file
  */
-var module = angular.module('act-app', ['ui.router', 'ngDialog', 'pascalprecht.translate', 'ui.bootstrap']);
+var module = angular.module('act-app', ['ui.router', 'ngDialog', 'pascalprecht.translate', 'ui.bootstrap', 'angular-table']);
 
+//STATE ROUTES
 module.config(function ($stateProvider, $urlRouterProvider, $provide) {
 	$stateProvider.state('dboard',
 		{
@@ -24,7 +25,8 @@ module.config(function ($stateProvider, $urlRouterProvider, $provide) {
 			url: "",
 			views: {
 				'content@' : {
-					templateUrl : '../resources/pages/servers.jsp'
+					templateUrl : '../resources/pages/servers.jsp',
+					controller : 'serverController'
 				}
 			}
 		}
@@ -62,6 +64,11 @@ module.config(function ($stateProvider, $urlRouterProvider, $provide) {
 	$urlRouterProvider.otherwise("");
 });
 
+//DIRECTIVES
+
+
+
+//CONTROLLERS
 module.controller("userInfoController", function ($scope, $state) {
 	$scope.userInfoDetails = {
 	    templateUrl: 'userInformation',
@@ -69,19 +76,30 @@ module.controller("userInfoController", function ($scope, $state) {
 });
 
 module.controller("menuController", function ($scope, $state) {
-	$scope.clickme = function() {
-        $state.go('dboard.test');
+	$scope.home = function() {
+        $state.go('dboard');
+	};
+	$scope.server = function() {
+        $state.go('dboard.server');
 	};
 });
 
 module.controller("homeController", function ($scope, $state) {
+});
+
+module.controller("serverController", function ($scope, $state) {
+	
 	$.ajax({
         url: '/act-web/actServer/getAllServers.do',
         type: 'GET',
         dataType: 'json',
         async: false,
         success: function(data) {
-            $scope.servers = data;
+            $scope.serverList = data;
+            $scope.config = {
+	    	    itemsPerPage: 3,
+	    	    fillLastPage: true
+            }
         }
     }).fail(function() {
     	$scope.loading = false;

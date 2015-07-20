@@ -21,7 +21,8 @@
 	<script src="<%= request.getContextPath()%>/resources/js/jquery-ui.custom.js"></script>
 	<script src="<%= request.getContextPath()%>/resources/js/jquery.fancytree.js"></script>
 	<script src="<%= request.getContextPath()%>/resources/js/act.js"></script>
-    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>	
+    <script src="<%= request.getContextPath()%>/resources/js/ui-bootstrap-tpls-0.13.0.js"></script>	
+    <script src="<%= request.getContextPath()%>/resources/js/angular-table.js"></script>
 	<link rel="icon" type="image/x-icon" href="<%= request.getContextPath()%>/resources/images/favicon.ico" />
 </head>
 <body>
