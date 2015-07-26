@@ -20,6 +20,8 @@ public class ServerBean implements Serializable {
 	private String serverLocation;
 	@DtoField
 	private String serverStatus;
+	@DtoField
+	private String serverHost;
 	
 	public Long getId() {
 		return id;
@@ -44,5 +46,11 @@ public class ServerBean implements Serializable {
 	}
 	public void setServerStatus(String serverStatus) {
 		this.serverStatus = serverStatus;
+	}
+	public String getServerHost() {
+		return serverHost;
+	}
+	public void setServerHost(String serverHost) {
+		this.serverHost = serverHost;
 	}
 }

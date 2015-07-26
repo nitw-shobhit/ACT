@@ -117,10 +117,10 @@
 .serverTable {
 	font-size: 10px;
 }
-.legendStyl {
+legend {
 	background-color: #FFF;
 }
-.fieldsetStyl {
+fieldset {
 	border-color: #FFF;
 	border-style: solid;
 }

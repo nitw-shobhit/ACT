@@ -7,13 +7,13 @@
 <title>ACT</title>
 </head>
 <body>
-	<fieldset class="summaryBox fieldsetStyl">
-		<legend class="legendStyl">
+	<fieldset class="summaryBox">
+		<legend>
 			<span class="header">Server Summary</span>
 		</legend>
 	</fieldset>
-	<fieldset class="summaryBox fieldsetStyl dbSummaryBox">
-		<legend class="legendStyl">
+	<fieldset class="summaryBox dbSummaryBox">
+		<legend>
 			<span class="header">Database Summary</span>
 		</legend>
 	</fieldset>

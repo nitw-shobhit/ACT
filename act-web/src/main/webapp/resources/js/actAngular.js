@@ -104,5 +104,23 @@ module.controller("serverController", function ($scope, $state) {
     }).fail(function() {
     	$scope.loading = false;
     });
+	
+	$scope.startServer = function(serverBean) {
+		$.ajax({
+	        url: '/act-web/actServer/startServer.do?serverBean='+JSON.stringify(serverBean),
+	        type: 'POST',
+	        dataType: 'json',
+	        async: false,
+	        success: function(data) {
+	            $scope.serverList = data;
+	            $scope.config = {
+		    	    itemsPerPage: 3,
+		    	    fillLastPage: true
+	            }
+	        }
+	    }).fail(function() {
+	    	$scope.loading = false;
+	    });
+	};
 });
 	  

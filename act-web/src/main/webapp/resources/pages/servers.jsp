@@ -7,8 +7,8 @@
 <title>ACT</title>
 </head>
 <body>
-	<fieldset class="serverBox fieldsetStyl">
-		<legend class="legendStyl">
+	<fieldset class="serverBox">
+		<legend>
 			<span class="header">Servers</span>
 		</legend>
 		<fieldset>
@@ -17,8 +17,17 @@
 				<tbody>
 					<tr>
 						<td at-implicit at-sortable at-attribute="serverName" at-initial-sorting="asc" at-title="NAME" ></td>
+						<td at-implicit at-sortable at-attribute="serverHost" at-title="HOST" ></td>
 						<td at-implicit at-sortable at-attribute="serverLocation" at-title="LOCATION" ></td>
-						<td at-implicit at-sortable at-attribute="serverStatus" at-title="STATUS"></td>
+						<td at-implicit at-sortable at-attribute="serverStatus" at-title="STATUS" ></td>
+						<td at-title="ACTIONS">
+							<a data-ng-click="startServer(item)"><span class="flaticon-arrow16"></span></a>
+							<span class="flaticon-power10"></span>
+							<span class="flaticon-tools6"></span>
+							<span class="flaticon-shape51"></span>
+							<span class="flaticon-file94"></span>
+							<span class="flaticon-delete97"></span>
+						</td>
 					</tr>
 				</tbody>
 			</table>
