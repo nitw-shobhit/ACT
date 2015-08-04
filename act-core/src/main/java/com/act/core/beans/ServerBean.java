@@ -2,6 +2,7 @@ package com.act.core.beans;
 
 import java.io.Serializable;
 
+import com.act.util.server.ServerType;
 import com.inspiresoftware.lib.dto.geda.annotations.Dto;
 import com.inspiresoftware.lib.dto.geda.annotations.DtoField;
 
@@ -22,6 +23,10 @@ public class ServerBean implements Serializable {
 	private String serverStatus;
 	@DtoField
 	private String serverHost;
+	@DtoField
+	private ServerType serverType;
+	@DtoField
+	private String serverVersion;
 	
 	public Long getId() {
 		return id;
@@ -52,5 +57,17 @@ public class ServerBean implements Serializable {
 	}
 	public void setServerHost(String serverHost) {
 		this.serverHost = serverHost;
+	}
+	public ServerType getServerType() {
+		return serverType;
+	}
+	public void setServerType(ServerType serverType) {
+		this.serverType = serverType;
+	}
+	public String getServerVersion() {
+		return serverVersion;
+	}
+	public void setServerVersion(String serverVersion) {
+		this.serverVersion = serverVersion;
 	}
 }

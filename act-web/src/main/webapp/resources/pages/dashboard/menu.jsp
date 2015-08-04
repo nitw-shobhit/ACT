@@ -25,10 +25,10 @@
 	<table>
 		<tr>
 			<td id="firstLink" class="menuBg"><a data-ng-click="home()" class="menuLink"><font class="underline">H</font>ome</a></td>
-			<td><a data-ng-click="server()" class="menuLink"><font class="underline">S</font>ervers</a></td>
-			<td><a data-ng-click="db()" class="menuLink"><font class="underline">D</font>atabases</a></td>
-			<td><a data-ng-click="stngs()" class="menuLink"><font class="underline">S</font>ettings</a></td>
-			<td><a data-ng-click="help()" class="menuLink"><font class="underline">H</font>elp</a></td>
+			<td class="menuBg"><a data-ng-click="server()" class="menuLink"><font class="underline">S</font>ervers</a></td>
+			<td class="menuBg"><a data-ng-click="db()" class="menuLink"><font class="underline">D</font>atabases</a></td>
+			<td class="menuBg"><a data-ng-click="stngs()" class="menuLink"><font class="underline">S</font>ettings</a></td>
+			<td class="menuBg"><a data-ng-click="help()" class="menuLink"><font class="underline">H</font>elp</a></td>
 		</tr>
 	</table>
 </body>

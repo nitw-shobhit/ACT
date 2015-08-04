@@ -7,4 +7,6 @@ import com.act.core.beans.ServerBean;
 public interface ServerService {
 
 	List<ServerBean> getAllServers();
+	
+	void startServer(ServerBean serverBean) throws Exception;
 }

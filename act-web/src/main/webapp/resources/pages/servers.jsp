@@ -11,28 +11,28 @@
 		<legend>
 			<span class="header">Servers</span>
 		</legend>
-		<fieldset>
 			<table class="table table-striped serverTable" at-table at-paginated at-list="serverList" at-config="config">
 				<thead></thead>
 				<tbody>
 					<tr>
 						<td at-implicit at-sortable at-attribute="serverName" at-initial-sorting="asc" at-title="NAME" ></td>
+						<td at-implicit at-sortable at-attribute="serverType" at-title="TYPE" ></td>
+						<td at-implicit at-sortable at-attribute="serverVersion" at-title="VERSION" ></td>
 						<td at-implicit at-sortable at-attribute="serverHost" at-title="HOST" ></td>
 						<td at-implicit at-sortable at-attribute="serverLocation" at-title="LOCATION" ></td>
 						<td at-implicit at-sortable at-attribute="serverStatus" at-title="STATUS" ></td>
 						<td at-title="ACTIONS">
 							<a data-ng-click="startServer(item)"><span class="flaticon-arrow16"></span></a>
-							<span class="flaticon-power10"></span>
-							<span class="flaticon-tools6"></span>
-							<span class="flaticon-shape51"></span>
-							<span class="flaticon-file94"></span>
-							<span class="flaticon-delete97"></span>
+							<a data-ng-click="startServer(item)"><span class="flaticon-power10"></span></a>
+							<a data-ng-click="startServer(item)"><span class="flaticon-tools6"></span></a>
+							<a data-ng-click="startServer(item)"><span class="flaticon-shape51"></span></a>
+							<a data-ng-click="startServer(item)"><span class="flaticon-file94"></span></a>
+							<a data-ng-click="startServer(item)"><span class="flaticon-delete97"></span></a>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 			<at-pagination at-list="serverList" at-config="config"></at-pagination>
-		</fieldset>
 	</fieldset>
 </body>
 </html>

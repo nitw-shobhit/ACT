@@ -1,7 +1,7 @@
 @CHARSET "ISO-8859-1";
 
 .baseBody {
-	background-color: #E2E7ED;
+	background-color: #FFF;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -11,7 +11,7 @@
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 5px;
-	box-shadow: 7px 7px 7px #888;
+	box-shadow: 3px 3px 3px #888, -3px 3px 3px #888, 3px -3px 3px #888, -3px -3px 3px #888;
 }
 .logoBox {
 	background: url(../images/logo.png);
@@ -39,10 +39,11 @@
 	margin-left: 2px;
 }
 .contentBox {
+	background-color: #FFF;
+	background-size: 996px 700px;
 	height: 700px;
 	width: 996px;
 	margin: 2px;
-	background: #CCC;
 	overflow-y: auto;
 }
 .content {
@@ -90,11 +91,11 @@
 	margin-right: 15px;
 }
 .menuBg:hover {
-	background: #CCC;
+	background: #91C8FF;
 	color: #FFF;
 }
 .menuSelect {
-	background: #CCC;
+	background: #91C8FF;
 }
 .underline {
 	text-decoration: underline;
@@ -117,12 +118,15 @@
 .serverTable {
 	font-size: 10px;
 }
-legend {
+.serverTable.th {
 	background-color: #FFF;
 }
+legend {
+	background-color: #91C8FF;
+	color: #000;
+}
 fieldset {
-	border-color: #FFF;
-	border-style: solid;
+	border: 1px solid;
 }
 .serverBox {
 	height: 100%;

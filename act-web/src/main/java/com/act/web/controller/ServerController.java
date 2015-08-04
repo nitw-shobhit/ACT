@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.act.core.beans.ServerBean;
 import com.act.model.service.ServerService;
 import com.act.util.exceptions.InternalApplicationException;
-import com.act.util.spring.CmdUtils;
 import com.act.util.spring.JsonUtils;
 import com.google.gson.Gson;
 
@@ -35,9 +34,9 @@ public class ServerController {
 		ServerBean serverBean;
 		try {
 			serverBean = (ServerBean) JsonUtils.toPojo(jsonObj, ServerBean.class);
-			CmdUtils.executeBatchFile(serverBean.getServerLocation());
+			serverService.startServer(serverBean);
 		} catch (Exception e) {
-			throw new InternalApplicationException("Something went wrong with the application : "+e.getMessage());
+			throw new InternalApplicationException("Something went wrong with the application", e);
 		}
 		return null;
 	}
