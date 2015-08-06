@@ -9,20 +9,20 @@
 <body>
 	<fieldset>
 		<legend>	
-			<span class="header">WEB SERVERS</span>
+			<span class="header">DATABASE SERVERS</span>
 		</legend>
 		<div class="serverBoxScrollDiv">
 			<table>
 				<tr>
-					<td data-ng-repeat="webServer in webServerList">
+					<td data-ng-repeat="dbServer in dbServerList">
 						<div class="serverFolder">
 							<div class="serverFolderContent">
 								<br>
-								<font size="3">{{webServer.serverName}}</font><br>
-								<b>{{webServer.serverType}}-{{webServer.serverVersion}}</b><br>
-								<div class="serverDescription">{{webServer.serverDescription}}</div>
+								<font size="3">{{dbServer.dbName}}</font><br>
+								<b>{{dbServer.dbType}}</b><br>
+								<div class="serverDescription">{{dbServer.dbDescription}}</div>
 							</div>
-							<div data-ng-class="webServer.serverStatus == 'Stopped' ? 'serverSideMenu inactiveBg' : 'serverSideMenu activeBg'">
+							<div data-ng-class="dbServer.dbStatus == 'Stopped' ? 'serverSideMenu inactiveBg' : 'serverSideMenu activeBg'">
 								<a data-ng-click="startWebServer()"
 									class="serverSideMenuLink"><span class="flaticon-arrow16"></span></a><br>
 								<a data-ng-click="stopWebServer()"

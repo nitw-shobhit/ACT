@@ -27,6 +27,8 @@ public class DatabaseBean implements Serializable {
 	private DatabaseType dbType;
 	@DtoField
 	private String dbStatus;
+	@DtoField
+	private String dbDescription;
 	
 	public Long getId() {
 		return id;
@@ -69,5 +71,11 @@ public class DatabaseBean implements Serializable {
 	}
 	public void setDbStatus(String dbStatus) {
 		this.dbStatus = dbStatus;
+	}
+	public String getDbDescription() {
+		return dbDescription;
+	}
+	public void setDbDescription(String dbDescription) {
+		this.dbDescription = dbDescription;
 	}
 }

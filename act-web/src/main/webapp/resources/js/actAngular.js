@@ -99,48 +99,54 @@ module.controller("serverController", function ($scope, $state) {
         dataType: 'json',
         async: false,
         success: function(data) {
-            $scope.serverList = data;
-            $scope.config = {
-	    	    itemsPerPage: 3,
-	    	    fillLastPage: true
-            }
+            $scope.webServerList = data;
         }
     }).fail(function() {
     	$scope.loading = false;
     });
 	
-	$scope.startServer = function(serverBean) {
+	$scope.addWebServer = function(serverBean) {
+		
+	};
+	
+	$scope.startWebServer = function(serverBean) {
 		$.ajax({
 	        url: '/act-web/actServer/startServer.do?serverBean='+JSON.stringify(serverBean),
 	        type: 'POST',
 	        dataType: 'json',
 	        async: false,
 	        success: function(data) {
-	            $scope.serverList = data;
-	            $scope.config = {
-		    	    itemsPerPage: 3,
-		    	    fillLastPage: true
-	            }
+	            $scope.webServerList = data;
 	        }
 	    }).fail(function() {
 	    	$scope.loading = false;
 	    });
 	};
+	
+	$scope.stopWebServer = function(serverBean) {
+	};
+	
+	$scope.configureWebServer = function(serverBean) {
+	};
+	
+	$scope.trackChangesWebServer = function(serverBean) {
+	};
+	
+	$scope.logsWebServer = function(serverBean) {
+	};
+	
+	$scope.deleteWebServer = function(serverBean) {
+	};
 });
 
 module.controller("databaseController", function ($scope, $state) {
-	
 	$.ajax({
 	    url: '/act-web/actDb/getAllDbServers.do',
 	    type: 'GET',
 	    dataType: 'json',
 	    async: false,
 	    success: function(data) {
-	        $scope.serverList = data;
-	        $scope.config = {
-	    	    itemsPerPage: 3,
-	    	    fillLastPage: true
-	        }
+	        $scope.dbServerList = data;
 	    }
 	}).fail(function() {
 		$scope.loading = false;
