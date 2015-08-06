@@ -11,9 +11,8 @@
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
 [class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
 	font-family: Flaticon;
-        font-size: 20px;
+        font-size: 10px;
 font-style: normal;
-margin-left: 20px;
 }.flaticon-arrow16:before {
 	content: "\e000";
 }

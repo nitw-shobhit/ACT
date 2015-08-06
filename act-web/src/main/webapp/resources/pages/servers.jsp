@@ -7,32 +7,42 @@
 <title>ACT</title>
 </head>
 <body>
-	<fieldset class="serverBox">
-		<legend>
+	<fieldset>
+		<legend>	
 			<span class="header">Servers</span>
 		</legend>
-			<table class="table table-striped serverTable" at-table at-paginated at-list="serverList" at-config="config">
-				<thead></thead>
-				<tbody>
-					<tr>
-						<td at-implicit at-sortable at-attribute="serverName" at-initial-sorting="asc" at-title="NAME" ></td>
-						<td at-implicit at-sortable at-attribute="serverType" at-title="TYPE" ></td>
-						<td at-implicit at-sortable at-attribute="serverVersion" at-title="VERSION" ></td>
-						<td at-implicit at-sortable at-attribute="serverHost" at-title="HOST" ></td>
-						<td at-implicit at-sortable at-attribute="serverLocation" at-title="LOCATION" ></td>
-						<td at-implicit at-sortable at-attribute="serverStatus" at-title="STATUS" ></td>
-						<td at-title="ACTIONS">
-							<a data-ng-click="startServer(item)"><span class="flaticon-arrow16"></span></a>
-							<a data-ng-click="startServer(item)"><span class="flaticon-power10"></span></a>
-							<a data-ng-click="startServer(item)"><span class="flaticon-tools6"></span></a>
-							<a data-ng-click="startServer(item)"><span class="flaticon-shape51"></span></a>
-							<a data-ng-click="startServer(item)"><span class="flaticon-file94"></span></a>
-							<a data-ng-click="startServer(item)"><span class="flaticon-delete97"></span></a>
-						</td>
-					</tr>
-				</tbody>
+		<div class="serverBoxScrollDiv">
+			<table>
+				<tr>
+					<td data-ng-repeat="server in serverList">
+						<div class="serverFolder">
+							<div class="serverFolderContent">
+								<span data-ng-show="server.serverStatus == 'Stopped'" class="serverStatusFlag"><img src="../resources/images/r-flag.png" height="16" width="16"></img></span>
+								<span data-ng-show="server.serverStatus == 'Running'" class="serverStatusFlag"><img src="../resources/images/g-flag.png" height="16" width="16"></img></span>
+								<br><br>
+								<font size="3">{{server.serverName}}</font><br>
+								<b>{{server.serverType}}-{{server.serverVersion}}</b><br>
+								<div class="serverDescription"><font size="1">{{server.serverDescription}}</font></div>
+							</div>
+							<div class="serverSideMenu">
+								<a data-ng-click=""
+									class="serverSideMenuLink"><span class="flaticon-arrow16"></span></a><br>
+								<a data-ng-click=""
+									class="serverSideMenuLink"><span class="flaticon-power10"></span></a><br>
+								<a data-ng-click=""
+									class="serverSideMenuLink"><span class="flaticon-tools6"></span></a><br>
+								<a data-ng-click=""
+									class="serverSideMenuLink"><span class="flaticon-shape51"></span></a><br>
+								<a data-ng-click=""
+									class="serverSideMenuLink"><span class="flaticon-file94"></span></a><br>
+								<a data-ng-click=""
+									class="serverSideMenuLink"><span class="flaticon-delete97"></span></a>
+							</div>
+						</div>
+					</td>
+				</tr>
 			</table>
-			<at-pagination at-list="serverList" at-config="config"></at-pagination>
+		</div>
 	</fieldset>
 </body>
 </html>

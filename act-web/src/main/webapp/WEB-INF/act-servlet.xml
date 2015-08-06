@@ -18,14 +18,18 @@
 
 	<!-- SERVICE BEANS -->
 	<bean id="userService" class="com.act.model.service.impl.UserServiceImpl" />
-	<bean id="serverService" class="com.act.model.service.impl.ServerServiceImpl" />
+	<bean id="webServerService" class="com.act.model.service.impl.WebServerServiceImpl" />
+	<bean id="databaseService" class="com.act.model.service.impl.DatabaseServiceImpl" />
 
 	<!-- CONTROLLERS -->
 	<bean name="/actLogin/*" class="com.act.web.controller.LoginController">
 		<property name="userService" ref="userService" />
 	</bean>
-	<bean name="/actServer/*" class="com.act.web.controller.ServerController">
-		<property name="serverService" ref="serverService" />
+	<bean name="/actServer/*" class="com.act.web.controller.WebServerController">
+		<property name="webServerService" ref="webServerService" />
+	</bean>
+	<bean name="/actDb/*" class="com.act.web.controller.DatabaseController">
+		<property name="databaseService" ref="databaseService" />
 	</bean>
 
 	<!-- I18N  -->

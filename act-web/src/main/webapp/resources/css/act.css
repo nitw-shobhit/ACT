@@ -1,7 +1,7 @@
 @CHARSET "ISO-8859-1";
 
 .baseBody {
-	background-color: #FFF;
+	background: url(../images/background.jpg);
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -34,17 +34,18 @@
 	border: 1px solid;
 }
 .menuBox {
-	height: 18px;
+	background-color: #FFF;
+	height: 22px;
 	width: 996px;
+	margin-top: 2px;
 	margin-left: 2px;
 }
 .contentBox {
-	background-color: #FFF;
+	background: url(../images/background.jpg);
 	background-size: 996px 700px;
-	height: 700px;
+	height: 690px;
 	width: 996px;
 	margin: 2px;
-	overflow-y: auto;
 }
 .content {
 	margin: 5px;
@@ -115,20 +116,59 @@
 	width: 20px;
 	float: right;
 }
-.serverTable {
-	font-size: 10px;
-}
-.serverTable.th {
+legend {
 	background-color: #FFF;
 }
-legend {
-	background-color: #91C8FF;
-	color: #000;
+.serverSideMenu {
+	height: 125px;
+	width: 20px;
+	float: left;
+  	background-color: #DADADA;
 }
-fieldset {
-	border: 1px solid;
+.serverSideMenu:hover {
+	height: 125px;
+	width: 20px;
+	float: left;
+  	cursor: pointer;
+  	background-color: #FFF;
 }
-.serverBox {
-	height: 100%;
-	width: 100%;
+.serverSideMenuLink {
+	width: 20px;
+	float: right;
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+}
+.serverSideMenuLink:hover {
+	width: 20px;
+	float: right;
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+.serverFolder {
+	height: 125px;
+	width: 160px;
+	margin-right: 10px;
+	margin-left: 10px;
+	box-shadow: 7px 7px 7px #888;
+}
+.serverFolderContent {
+	height: 125px;
+	width: 140px; 
+	float: left;
+	background-color: #FFF;
+}
+.serverBoxScrollDiv {
+	overflow: auto;
+	height: 150px;
+	width: 960px;
+}
+.serverStatusFlag {
+	float: left;
+	margin: 2px;
+}
+.serverDescription {
+	height: 35px;
+	width: 130px;
+	overflow:auto;
+	margin-left:5px;
 }

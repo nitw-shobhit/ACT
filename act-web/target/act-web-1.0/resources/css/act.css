@@ -1,1 +1,114 @@
 @CHARSET "ISO-8859-1";
+
+.baseBody {
+	background-color: #E2E7ED;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 750px;
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+	box-shadow: 7px 7px 7px #888;
+}
+.logoBox {
+	background: url(../images/logo.png);
+	background-size: 996px 27px;
+    background-repeat: no-repeat;
+	height: 27px;
+   	width: 996px;
+   	margin-left: 2px;
+}
+.logo {
+	height: 27px;
+	width: 782px;
+    float: left;
+}
+
+.userInfo {
+	float: left;
+	height: 27px;
+	width: 213px;
+	border: 1px solid;
+}
+.menuBox {
+	height: 18px;
+	width: 996px;
+	margin-left: 2px;
+}
+.contentBox {
+	height: 700px;
+	width: 996px;
+	margin: 2px;
+	background: #CCC;
+	overflow-y: auto;
+}
+.content {
+	margin: 5px;
+}
+.loginBox {
+	background: url(../images/loginbox.jpg);
+	height: 300px;
+	width: 400px;
+	background-size: 400px 300px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+.loginFields {
+	height: 31px;
+	width: 246px;
+}
+.loginSubmit {
+	margin-top: 24px;
+	font-weight: bold;
+	font-size: 20px;
+}
+.loginUserNameBox {
+	margin-top: 93px;
+}
+.loginPasswordBox {
+	margin-top: 22px;
+}
+.userInfoNameSpan {
+	font-size: 12px;
+	margin-left: 5px;
+	margin-top: 6px;
+}
+.userInfoProfilePic {
+	height: 25px;
+	width: 25px;
+}
+.menuLink {
+	text-decoration: none;
+	color: #000;
+	cursor: pointer;
+	font-size: 11px;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+.menuBg:hover {
+	background: #CCC;
+	color: #FFF;
+}
+.menuSelect {
+	background: #CCC;
+}
+.underline {
+	text-decoration: underline;
+}
+.header {
+	font-size: 12px;
+}
+.summaryBox {
+	height: 345px;
+	width: 100%;
+	float: left;
+}
+.userInfoLink {
+	height: 20px;
+	width: 20px;
+	float: right;
+}

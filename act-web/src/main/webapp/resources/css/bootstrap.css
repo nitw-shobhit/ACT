@@ -181,7 +181,8 @@ td {
 }
 th {
   padding: 0;
-  background-color: #adc4fe;
+  background-color: #808080;
+  color: #FFF;
 }
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
@@ -1093,7 +1094,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #337ab7;
+  color: #000;
   text-decoration: none;
 }
 a:hover,
@@ -2315,7 +2316,7 @@ th {
   border-bottom-width: 2px;
 }
 .table-striped > tbody > tr:nth-of-type(even) {
-  background-color: #DDD;
+  background-color: #F7F7F7;
 }
 .table-striped > tbody > tr:nth-of-type(odd) {
   background-color: #FFF;

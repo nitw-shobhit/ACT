@@ -31,12 +31,13 @@ module.config(function ($stateProvider, $urlRouterProvider, $provide) {
 			}
 		}
   	)
-  	.state('dboard.databases',
+  	.state('dboard.database',
 		{
 			url: "",
 			views: {
 				'content@' : {
-					templateUrl : '../resources/pages/databases.jsp'
+					templateUrl : '../resources/pages/databases.jsp',
+					controller : 'databaseController'
 				}
 			}
 		}
@@ -82,6 +83,9 @@ module.controller("menuController", function ($scope, $state) {
 	$scope.server = function() {
         $state.go('dboard.server');
 	};
+	$scope.database = function() {
+        $state.go('dboard.database');
+	};
 });
 
 module.controller("homeController", function ($scope, $state) {
@@ -122,5 +126,24 @@ module.controller("serverController", function ($scope, $state) {
 	    	$scope.loading = false;
 	    });
 	};
+});
+
+module.controller("databaseController", function ($scope, $state) {
+	
+	$.ajax({
+	    url: '/act-web/actDb/getAllDbServers.do',
+	    type: 'GET',
+	    dataType: 'json',
+	    async: false,
+	    success: function(data) {
+	        $scope.serverList = data;
+	        $scope.config = {
+	    	    itemsPerPage: 3,
+	    	    fillLastPage: true
+	        }
+	    }
+	}).fail(function() {
+		$scope.loading = false;
+	});
 });
 	  
