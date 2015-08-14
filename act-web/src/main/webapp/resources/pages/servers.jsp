@@ -23,7 +23,7 @@
 								<div class="serverDescription">{{webServer.serverDescription}}</div>
 							</div>
 							<div data-ng-class="webServer.serverStatus == 'Stopped' ? 'serverSideMenu inactiveBg' : 'serverSideMenu activeBg'">
-								<a data-ng-click="startWebServer()"
+								<a data-ng-click="startWebServer(webServer)"
 									class="serverSideMenuLink"><span class="flaticon-arrow16"></span></a><br>
 								<a data-ng-click="stopWebServer()"
 									class="serverSideMenuLink"><span class="flaticon-power10"></span></a><br>

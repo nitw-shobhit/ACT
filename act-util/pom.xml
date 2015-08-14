@@ -45,8 +45,8 @@
 		</dependency>
 		<dependency>
 			<groupId>org.apache.tomcat</groupId>
-			<artifactId>juli</artifactId>
-			<version>6.0.26</version>
+			<artifactId>tomcat-juli</artifactId>
+			<version>7.0.61</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.ws.rs</groupId>

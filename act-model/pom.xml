@@ -25,6 +25,11 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.act</groupId>
+			<artifactId>act-dao</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.act</groupId>
 			<artifactId>act-core</artifactId>
 			<version>1.0</version>
 		</dependency>

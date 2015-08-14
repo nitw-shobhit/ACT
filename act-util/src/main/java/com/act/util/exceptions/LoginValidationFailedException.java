@@ -5,7 +5,7 @@ public class LoginValidationFailedException extends ApplicationException {
     private static final long serialVersionUID = 1L;
 
     public LoginValidationFailedException() {
-    	errorCode = "1001";
+    	errorCode = "1007";
     }
 
     public LoginValidationFailedException(String message, Throwable cause) {

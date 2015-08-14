@@ -21,6 +21,14 @@
    	width: 996px;
    	margin-left: 2px;
 }
+.logoBoxSp {	
+	background: url(../images/logoSp.png);
+	background-size: 996px 27px;
+    background-repeat: no-repeat;
+	height: 27px;
+   	width: 996px;
+   	margin-left: 2px;
+}
 .logo {
 	height: 27px;
 	width: 782px;
@@ -49,6 +57,48 @@
 }
 .content {
 	margin: 5px;
+}
+.errorBox {
+	background: url(../images/error.png);
+	height: 400px;
+	width: 700px;
+	background-size: 700px 400px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+.errorContent {
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	margin-top: 30px;
+}
+.errorTable {
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+.errorButtonHome {
+	margin-top: 241px;
+	margin-left: 189px;
+}
+.errorButtonContact {
+	margin-top: 241px;
+}
+.paddingl-5px {
+	padding: 5px;
+}
+.paddingr-5px {
+	padding: 5px;
+}
+.paddingt-5px {
+	padding: 5px;
+}
+.paddingb-5px {
+	padding: 5px;
+}
+.padding-5px {
+	padding: 5px;
 }
 .loginBox {
 	background: url(../images/loginbox.jpg);
@@ -114,10 +164,23 @@
 .dbSummaryBox {
 	margin-top: 5px;
 }
-.userInfoLink {
+.userInfoLinkImg {
 	height: 20px;
 	width: 20px;
+}
+.userInfoLink {
 	float: right;
+}
+.userInfoDropdown {
+	width: 220px;
+	font-size: 10px;
+}
+.userInfoTable {
+	vertical-align: top;
+	margin: 5px;
+}
+.userInfoContent {
+	margin-left: 20px;
 }
 legend {
 	background-color: #FFF;
@@ -175,4 +238,11 @@ legend {
 	overflow:auto;
 	margin-left:5px;
 	font-size: 10px;
+}
+.worklistTable {
+	font-size: 10px;
+}
+.worklistBox {
+	height: 100%;
+	width: 100%;
 }

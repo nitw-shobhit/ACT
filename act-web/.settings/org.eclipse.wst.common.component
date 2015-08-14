@@ -7,6 +7,9 @@
         <dependent-module archiveName="act-model-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/act-model/act-model">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="act-dao-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/act-dao/act-dao">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <dependent-module archiveName="act-core-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/act-core/act-core">
             <dependency-type>uses</dependency-type>
         </dependent-module>

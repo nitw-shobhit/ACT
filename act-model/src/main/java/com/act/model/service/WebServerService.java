@@ -6,7 +6,7 @@ import com.act.core.beans.WebServerBean;
 
 public interface WebServerService {
 
-	List<WebServerBean> getAllServers();
+	List<WebServerBean> getAllWebServers();
 	
-	void startServer(WebServerBean serverBean) throws Exception;
+	void startWebServer(WebServerBean webServerBean) throws Exception;
 }

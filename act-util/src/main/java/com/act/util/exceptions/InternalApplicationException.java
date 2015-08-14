@@ -5,7 +5,7 @@ public class InternalApplicationException extends ApplicationException {
     private static final long serialVersionUID = 1L;
 
     public InternalApplicationException() {
-    	errorCode = "1000";
+    	errorCode = "1001";
     }
 
     public InternalApplicationException(String message, Throwable cause) {

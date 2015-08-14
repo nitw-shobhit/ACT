@@ -42,6 +42,17 @@ module.config(function ($stateProvider, $urlRouterProvider, $provide) {
 			}
 		}
   	)
+  	.state('dboard.worklist',
+		{
+			url: "",
+			views: {
+				'content@' : {
+					templateUrl : '../resources/pages/worklist.jsp',
+					controller : 'worklistController'
+				}
+			}
+		}
+  	)
   	.state('dboard.settings',
 		{
 			url: "",
@@ -70,10 +81,30 @@ module.config(function ($stateProvider, $urlRouterProvider, $provide) {
 
 
 //CONTROLLERS
-module.controller("userInfoController", function ($scope, $state) {
-	$scope.userInfoDetails = {
-	    templateUrl: 'userInformation',
+module.controller("userInfoController", function ($scope, $state, ngDialog) {
+
+	$scope.logout = function() {
+		window.location.href="/act-web/login.jsp";
 	};
+	
+	$scope.openProfileBox = function(id,name,type,phone,email,groupid) {
+		$scope.userBean = {
+			"userId": id,
+			"userName": name,
+			"userType": type,
+			"userPhone": phone,
+			"userEmail": email
+		};
+		ngDialog.open({
+			template: 'userProfile',
+			data: $scope.userBean,
+			className: 'ngdialog-theme-default profileBox',
+			controller: 'userInfoController',
+			preCloseCallback: function(value) {
+				return true;
+			}
+		});
+	}
 });
 
 module.controller("menuController", function ($scope, $state) {
@@ -86,6 +117,9 @@ module.controller("menuController", function ($scope, $state) {
 	$scope.database = function() {
         $state.go('dboard.database');
 	};
+	$scope.worklist = function() {
+        $state.go('dboard.worklist');
+	};
 });
 
 module.controller("homeController", function ($scope, $state) {
@@ -94,7 +128,7 @@ module.controller("homeController", function ($scope, $state) {
 module.controller("serverController", function ($scope, $state) {
 	
 	$.ajax({
-        url: '/act-web/actServer/getAllServers.do',
+        url: '/act-web/actServer/getAllWebServers.do',
         type: 'GET',
         dataType: 'json',
         async: false,
@@ -109,14 +143,13 @@ module.controller("serverController", function ($scope, $state) {
 		
 	};
 	
-	$scope.startWebServer = function(serverBean) {
+	$scope.startWebServer = function(webServerBean) {
 		$.ajax({
-	        url: '/act-web/actServer/startServer.do?serverBean='+JSON.stringify(serverBean),
+	        url: '/act-web/actServer/startWebServer.do?webServerBean='+JSON.stringify(webServerBean),
 	        type: 'POST',
 	        dataType: 'json',
 	        async: false,
 	        success: function(data) {
-	            $scope.webServerList = data;
 	        }
 	    }).fail(function() {
 	    	$scope.loading = false;
@@ -140,6 +173,7 @@ module.controller("serverController", function ($scope, $state) {
 });
 
 module.controller("databaseController", function ($scope, $state) {
+
 	$.ajax({
 	    url: '/act-web/actDb/getAllDbServers.do',
 	    type: 'GET',
@@ -147,6 +181,51 @@ module.controller("databaseController", function ($scope, $state) {
 	    async: false,
 	    success: function(data) {
 	        $scope.dbServerList = data;
+	    }
+	}).fail(function() {
+		$scope.loading = false;
+	});
+	
+	$scope.startDbServer = function(dbServerBean) {
+		$.ajax({
+	        url: '/act-web/actDb/startDbServer.do?dbServerBean='+JSON.stringify(dbServerBean),
+	        type: 'POST',
+	        dataType: 'json',
+	        async: false,
+	        success: function(data) {
+	        }
+	    }).fail(function() {
+	    	$scope.loading = false;
+	    });
+	};
+	
+	$scope.stopDbServer = function(dbServerBean) {
+		$.ajax({
+	        url: '/act-web/actDb/stopDbServer.do?dbServerBean='+JSON.stringify(dbServerBean),
+	        type: 'POST',
+	        dataType: 'json',
+	        async: false,
+	        success: function(data) {
+	        }
+	    }).fail(function() {
+	    	$scope.loading = false;
+	    });
+	};
+});
+
+module.controller("worklistController", function ($scope, $state) {
+
+	$.ajax({
+	    url: '/act-web/actWorklist/getWorklist.do',
+	    type: 'GET',
+	    dataType: 'json',
+	    async: false,
+	    success: function(data) {
+	        $scope.worklist = data;
+	        $scope.config = {
+	    	    itemsPerPage: 10,
+	    	    fillLastPage: true
+            }
 	    }
 	}).fail(function() {
 		$scope.loading = false;

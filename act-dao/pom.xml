@@ -22,4 +22,11 @@
 			</plugin>
 		</plugins>
 	</build>
+	<dependencies>
+		<dependency>
+			<groupId>org.jbpm</groupId>
+			<artifactId>jbpm-human-task-core</artifactId>
+			<version>6.3.0.Beta2</version>
+		</dependency>
+	</dependencies>
 </project>

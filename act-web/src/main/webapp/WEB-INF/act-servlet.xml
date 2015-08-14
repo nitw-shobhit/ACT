@@ -20,6 +20,8 @@
 	<bean id="userService" class="com.act.model.service.impl.UserServiceImpl" />
 	<bean id="webServerService" class="com.act.model.service.impl.WebServerServiceImpl" />
 	<bean id="databaseService" class="com.act.model.service.impl.DatabaseServiceImpl" />
+	<bean id="worklistService" class="com.act.model.service.impl.WorklistServiceImpl" />
+
 
 	<!-- CONTROLLERS -->
 	<bean name="/actLogin/*" class="com.act.web.controller.LoginController">
@@ -31,21 +33,36 @@
 	<bean name="/actDb/*" class="com.act.web.controller.DatabaseController">
 		<property name="databaseService" ref="databaseService" />
 	</bean>
-
+	<bean name="/actWorklist/*" class="com.act.web.controller.WorklistController">
+		<property name="worklistService" ref="worklistService" />
+	</bean>
+	
 	<!-- I18N  -->
 	<bean id="localeResolver"
 		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
-		<property name="defaultLocale" value="en" />
+		<property name="defaultLocale" value="es" />
 	</bean>
 	<bean id="localeChangeInterceptor"
 		class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
 		<property name="paramName" value="language" />
 	</bean>
 	
+	<!-- EXCEPTION HANDLER -->
+	<bean id="simpleMappingExceptionResolver" class="com.act.web.exceptionhandler.ActExceptionHandler">
+        <property name="exceptionMappings">
+            <map>
+                <entry key="Exception" value="errorPage"></entry>
+            </map>
+        </property>
+        <property name="defaultErrorView" value="errorPage"/>
+        <property name="localeResolver" ref="localeResolver" />
+        <property name="messageSource" ref="messageSource" />
+    </bean>
+	
 	<!-- MESSAGE SOURCE -->
 	<bean id="messageSource"
 		class="org.springframework.context.support.ResourceBundleMessageSource">
-		<property name="basename" value="exception" />
+		<property name="basename" value="locale/exception/exception" />
 	</bean>
 	
 	<!-- VIEW RESOLVER -->

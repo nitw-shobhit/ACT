@@ -14,7 +14,7 @@ import com.act.util.webserver.impl.WebServerType;
 public class WebServerServiceImpl implements WebServerService {
 
 	@Override
-	public List<WebServerBean> getAllServers() {
+	public List<WebServerBean> getAllWebServers() {
 		List<WebServerBean> servers = new ArrayList<WebServerBean>();
 		WebServerBean server = new WebServerBean();
 		server.setId((long) 1);
@@ -60,9 +60,9 @@ public class WebServerServiceImpl implements WebServerService {
 	}
 
 	@Override
-	public void startServer(WebServerBean serverBean) throws ServerFactoryException, ServerOperationException {
-		ServerUtils utils = WebServerFactory.buildFactory(serverBean.getServerType());
-		utils.startServer(serverBean.getServerLocation());
+	public void startWebServer(WebServerBean webServerBean) throws ServerFactoryException, ServerOperationException {
+		ServerUtils utils = WebServerFactory.buildFactory(webServerBean.getServerType());
+		utils.startServer(webServerBean.getServerLocation());
 	}
 
 }

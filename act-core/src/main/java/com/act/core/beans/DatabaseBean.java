@@ -2,12 +2,13 @@ package com.act.core.beans;
 
 import java.io.Serializable;
 
+import com.act.util.converter.BeanEntityConverter;
 import com.act.util.dbserver.impl.DatabaseType;
 import com.inspiresoftware.lib.dto.geda.annotations.Dto;
 import com.inspiresoftware.lib.dto.geda.annotations.DtoField;
 
 @Dto
-public class DatabaseBean implements Serializable {
+public class DatabaseBean implements Serializable, BeanEntityConverter<DatabaseBean, Object> {
 
 	/**
 	 * 
@@ -20,9 +21,7 @@ public class DatabaseBean implements Serializable {
 	@DtoField
 	private String dbUrl;
 	@DtoField
-	private String dbUserName;
-	@DtoField
-	private String dbPassword;
+	private String dbPath;
 	@DtoField
 	private DatabaseType dbType;
 	@DtoField
@@ -48,18 +47,6 @@ public class DatabaseBean implements Serializable {
 	public void setDbUrl(String dbUrl) {
 		this.dbUrl = dbUrl;
 	}
-	public String getDbUserName() {
-		return dbUserName;
-	}
-	public void setDbUserName(String dbUserName) {
-		this.dbUserName = dbUserName;
-	}
-	public String getDbPassword() {
-		return dbPassword;
-	}
-	public void setDbPassword(String dbPassword) {
-		this.dbPassword = dbPassword;
-	}
 	public DatabaseType getDbType() {
 		return dbType;
 	}
@@ -77,5 +64,22 @@ public class DatabaseBean implements Serializable {
 	}
 	public void setDbDescription(String dbDescription) {
 		this.dbDescription = dbDescription;
+	}
+	public String getDbPath() {
+		return dbPath;
+	}
+	public void setDbPath(String dbPath) {
+		this.dbPath = dbPath;
+	}
+	
+	@Override
+	public Object convertEntityToBean() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public DatabaseBean convertBeanToEntity() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

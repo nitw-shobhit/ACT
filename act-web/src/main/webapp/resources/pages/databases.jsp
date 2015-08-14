@@ -18,14 +18,14 @@
 						<div class="serverFolder">
 							<div class="serverFolderContent">
 								<br>
-								<font size="3">{{dbServer.dbName}}</font><br>
+								<button class="btn btnLink" data-ng-click=getMetaData()><font size="3">{{dbServer.dbName}}</font></button><br>
 								<b>{{dbServer.dbType}}</b><br>
 								<div class="serverDescription">{{dbServer.dbDescription}}</div>
 							</div>
 							<div data-ng-class="dbServer.dbStatus == 'Stopped' ? 'serverSideMenu inactiveBg' : 'serverSideMenu activeBg'">
-								<a data-ng-click="startWebServer()"
+								<a data-ng-click="startDbServer(dbServer)"
 									class="serverSideMenuLink"><span class="flaticon-arrow16"></span></a><br>
-								<a data-ng-click="stopWebServer()"
+								<a data-ng-click="stopDbServer(dbServer)"
 									class="serverSideMenuLink"><span class="flaticon-power10"></span></a><br>
 								<a data-ng-click="configureWebServer()"
 									class="serverSideMenuLink"><span class="flaticon-tools6"></span></a><br>

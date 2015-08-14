@@ -23,18 +23,18 @@ public class WebServerController {
 	@Resource
 	private WebServerService webServerService;
 	
-	@RequestMapping(method = RequestMethod.GET, value="/getAllServers")
-	public @ResponseBody String getAllServers() {
-		List<WebServerBean> servers = webServerService.getAllServers();
+	@RequestMapping(method = RequestMethod.GET, value="/getAllWebServers")
+	public @ResponseBody String getAllWebServers() {
+		List<WebServerBean> servers = webServerService.getAllWebServers();
 		return new Gson().toJson(servers);
 	}
 	
-	@RequestMapping(method = RequestMethod.POST, value="/startServer")
-	public @ResponseBody String startServer(@RequestParam("serverBean") String jsonObj) throws InternalApplicationException {
-		WebServerBean serverBean;
+	@RequestMapping(method = RequestMethod.POST, value="/startWebServer")
+	public @ResponseBody String startWebServer(@RequestParam("webServerBean") String jsonObj) throws InternalApplicationException {
+		WebServerBean webServerBean;
 		try {
-			serverBean = (WebServerBean) JsonUtils.toPojo(jsonObj, WebServerBean.class);
-			webServerService.startServer(serverBean);
+			webServerBean = (WebServerBean) JsonUtils.toPojo(jsonObj, WebServerBean.class);
+			webServerService.startWebServer(webServerBean);
 		} catch (Exception e) {
 			throw new InternalApplicationException("Something went wrong with the application", e);
 		}
