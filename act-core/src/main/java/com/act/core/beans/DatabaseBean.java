@@ -19,7 +19,11 @@ public class DatabaseBean implements Serializable, BeanEntityConverter<DatabaseB
 	@DtoField
 	private String dbName;
 	@DtoField
-	private String dbUrl;
+	private String dbDisplayName;
+	@DtoField
+	private String dbUserName;
+	@DtoField
+	private String dbPassword;
 	@DtoField
 	private String dbPath;
 	@DtoField
@@ -28,6 +32,10 @@ public class DatabaseBean implements Serializable, BeanEntityConverter<DatabaseB
 	private String dbStatus;
 	@DtoField
 	private String dbDescription;
+	@DtoField
+	private String dbHost;
+	@DtoField
+	private long dbPort;
 	
 	public Long getId() {
 		return id;
@@ -40,12 +48,6 @@ public class DatabaseBean implements Serializable, BeanEntityConverter<DatabaseB
 	}
 	public void setDbName(String dbName) {
 		this.dbName = dbName;
-	}
-	public String getDbUrl() {
-		return dbUrl;
-	}
-	public void setDbUrl(String dbUrl) {
-		this.dbUrl = dbUrl;
 	}
 	public DatabaseType getDbType() {
 		return dbType;
@@ -71,6 +73,18 @@ public class DatabaseBean implements Serializable, BeanEntityConverter<DatabaseB
 	public void setDbPath(String dbPath) {
 		this.dbPath = dbPath;
 	}
+	public String getDbUserName() {
+		return dbUserName;
+	}
+	public void setDbUserName(String dbUserName) {
+		this.dbUserName = dbUserName;
+	}
+	public String getDbPassword() {
+		return dbPassword;
+	}
+	public void setDbPassword(String dbPassword) {
+		this.dbPassword = dbPassword;
+	}
 	
 	@Override
 	public Object convertEntityToBean() {
@@ -81,5 +95,23 @@ public class DatabaseBean implements Serializable, BeanEntityConverter<DatabaseB
 	public DatabaseBean convertBeanToEntity() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	public String getDbHost() {
+		return dbHost;
+	}
+	public void setDbHost(String dbHost) {
+		this.dbHost = dbHost;
+	}
+	public long getDbPort() {
+		return dbPort;
+	}
+	public void setDbPort(long dbPort) {
+		this.dbPort = dbPort;
+	}
+	public String getDbDisplayName() {
+		return dbDisplayName;
+	}
+	public void setDbDisplayName(String dbDisplayName) {
+		this.dbDisplayName = dbDisplayName;
 	}
 }

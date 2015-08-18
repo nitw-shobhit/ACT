@@ -10,13 +10,16 @@ public class ServerOperationException extends ApplicationException {
 
     public ServerOperationException(String message, Throwable cause) {
         super(message, cause);
+    	errorCode = "1003";
     }
 
     public ServerOperationException(String message) {
         super(message);
+    	errorCode = "1003";
     }
 
     public ServerOperationException(Throwable cause) {
         super(cause);
+    	errorCode = "1003";
     }
 }

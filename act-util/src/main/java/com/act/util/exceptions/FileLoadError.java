@@ -10,13 +10,16 @@ public class FileLoadError extends ApplicationException {
 
     public FileLoadError(String message, Throwable cause) {
         super(message, cause);
+    	errorCode = "1005";
     }
 
     public FileLoadError(String message) {
         super(message);
+    	errorCode = "1005";
     }
 
     public FileLoadError(Throwable cause) {
         super(cause);
+    	errorCode = "1005";
     }
 }

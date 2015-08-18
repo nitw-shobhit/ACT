@@ -10,13 +10,16 @@ public class EmailServiceFailureException extends ApplicationException {
 
     public EmailServiceFailureException(String message, Throwable cause) {
         super(message, cause);
+    	errorCode = "1004";
     }
 
     public EmailServiceFailureException(String message) {
         super(message);
+    	errorCode = "1004";
     }
 
     public EmailServiceFailureException(Throwable cause) {
         super(cause);
+    	errorCode = "1004";
     }
 }
