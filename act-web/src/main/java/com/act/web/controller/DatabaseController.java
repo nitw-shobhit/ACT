@@ -53,6 +53,19 @@ public class DatabaseController {
 		return null;
 	}
 	
+	@RequestMapping(method = RequestMethod.GET, value="/getDbTables")
+	public @ResponseBody String getDbTables(@RequestParam("dbServerBean") String jsonObj) throws InternalApplicationException {
+		DatabaseBean dbBean;
+		List<String> tables = null;
+		try {
+			dbBean = (DatabaseBean) JsonUtils.toPojo(jsonObj, DatabaseBean.class);
+			tables = databaseService.getDbTables(dbBean);
+		} catch (Exception e) {
+			throw new InternalApplicationException("Something went wrong with the application", e);
+		}
+		return new Gson().toJson(tables);
+	}
+	
 	public DatabaseService getDatabaseService() {
 		return databaseService;
 	}

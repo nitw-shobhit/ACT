@@ -10,13 +10,16 @@ public class DatabaseFactoryException extends ApplicationException {
 
     public DatabaseFactoryException(String message, Throwable cause) {
         super(message, cause);
+    	errorCode = "1006";
     }
 
     public DatabaseFactoryException(String message) {
         super(message);
+    	errorCode = "1006";
     }
 
     public DatabaseFactoryException(Throwable cause) {
         super(cause);
+    	errorCode = "1006";
     }
 }

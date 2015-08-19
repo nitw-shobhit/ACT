@@ -24,5 +24,4 @@ public class MysqlUtils implements ServerUtils {
 			throw new ServerOperationException("DB Server shutdown failed!!", e);
 		}
 	}
-
 }

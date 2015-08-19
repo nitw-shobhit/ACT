@@ -1,7 +1,7 @@
 /**
  * Angular file
  */
-var module = angular.module('act-app', ['ui.router', 'ngDialog', 'pascalprecht.translate', 'ui.bootstrap', 'angular-table']);
+var module = angular.module('act-app', ['ui.router', 'ngDialog', 'pascalprecht.translate', 'ui.bootstrap', 'angular-table', 'angularTreeview']);
 
 //ROOT SCOPE ELEMENTS
 module.run(function($rootScope) {
@@ -48,6 +48,17 @@ module.config(function ($stateProvider, $urlRouterProvider, $provide) {
 				}
 			}
 		}
+  	)
+  	.state('dboard.database.schema',
+  		{
+	  		url: "",
+			views: {
+				'schema' : {
+					templateUrl : '../resources/pages/schema.jsp',
+					controller : 'databaseController'
+				}
+			}
+  		}
   	)
   	.state('dboard.worklist',
 		{
@@ -130,7 +141,7 @@ module.controller("userInfoController", function ($scope, $state, ngDialog, $roo
 		ngDialog.close();
 		$rootScope.panelMessage = "User profile updated."
 		$rootScope.successBoxFlag = true;
-	}
+	};
 });
 
 module.controller("menuController", function ($scope, $state) {
@@ -162,7 +173,7 @@ module.controller("serverController", function ($scope, $state, $rootScope) {
             $scope.webServerList = data;
         }
     }).fail(function() {
-    	$scope.loading = false;
+    	console.log("Operation Failed");
     });
 	
 	$scope.addWebServer = function(serverBean) {
@@ -213,7 +224,7 @@ module.controller("databaseController", function ($scope, $state) {
 	        $scope.dbServerList = data;
 	    }
 	}).fail(function() {
-		$scope.loading = false;
+		console.log("Operation Failed");
 	});
 	
 	$scope.startDbServer = function(dbServerBean) {
@@ -225,7 +236,7 @@ module.controller("databaseController", function ($scope, $state) {
 	        success: function(data) {
 	        }
 	    }).fail(function() {
-	    	$scope.loading = false;
+	    	console.log("Operation Failed");
 	    });
 	};
 	
@@ -238,9 +249,42 @@ module.controller("databaseController", function ($scope, $state) {
 	        success: function(data) {
 	        }
 	    }).fail(function() {
-	    	$scope.loading = false;
+	    	console.log("Operation Failed");
 	    });
 	};
+	
+	$scope.getDbTables = function(dbServerBean) {
+		$.ajax({
+	        url: '/act-web/actDb/getDbTables.do?dbServerBean='+JSON.stringify(dbServerBean),
+	        type: 'GET',
+	        dataType: 'json',
+	        async: false,
+	        success: function(data) {
+	        	$scope.schemaData = 
+	        		[
+	        		    { "label" : dbServerBean.dbDisplayName, "id" : "db", "children" : [
+	        		        { "label" : "Sequences", "id" : "seq", "children" : [] },
+	        		        { "label" : "Tables", "id" : "tab", "children" : 
+	        		            [
+	        		                { "label" : "testa", "id" : "table1", "children" : [] },
+	        		                { "label" : "testb", "id" : "table2", "children" : [] }
+	        		            ]
+	        		         }
+	        		    ]}
+	        		];
+	        	$state.go('dboard.database.schema');
+	        }
+	    }).fail(function() {
+	    	console.log("Operation Failed");
+	    });
+	};
+	
+	$scope.$watch( 'schemaMenu.currentNode', function( newObj, oldObj ) {
+	    if( $scope.abc && angular.isObject($scope.abc.currentNode) ) {
+	        console.log( 'Node Selected!!' );
+	        console.log( $scope.abc.currentNode );
+	    }
+	}, false);
 });
 
 module.controller("worklistController", function ($scope, $state) {
@@ -255,10 +299,10 @@ module.controller("worklistController", function ($scope, $state) {
 	        $scope.config = {
 	    	    itemsPerPage: 10,
 	    	    fillLastPage: true
-            }
+            };
 	    }
 	}).fail(function() {
-		$scope.loading = false;
+		console.log("Operation Failed");
 	});
 });
 	  

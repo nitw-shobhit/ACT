@@ -10,13 +10,16 @@ public class ServerFactoryException extends ApplicationException {
 
     public ServerFactoryException(String message, Throwable cause) {
         super(message, cause);
+    	errorCode = "1002";
     }
 
     public ServerFactoryException(String message) {
         super(message);
+    	errorCode = "1002";
     }
 
     public ServerFactoryException(Throwable cause) {
         super(cause);
+    	errorCode = "1002";
     }
 }

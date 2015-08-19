@@ -10,13 +10,16 @@ public class LoginValidationFailedException extends ApplicationException {
 
     public LoginValidationFailedException(String message, Throwable cause) {
         super(message, cause);
+    	errorCode = "1007";
     }
 
     public LoginValidationFailedException(String message) {
         super(message);
+    	errorCode = "1007";
     }
 
     public LoginValidationFailedException(Throwable cause) {
         super(cause);
+    	errorCode = "1007";
     }
 }

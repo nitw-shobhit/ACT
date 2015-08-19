@@ -18,7 +18,7 @@
 						<div class="serverFolder">
 							<div class="serverFolderContent">
 								<br>
-								<button class="btn btnLink" data-ng-click=getMetaData()><font size="3">{{dbServer.dbName}}</font></button><br>
+								<button class="btn btnLink" data-ng-click="getDbTables(dbServer)"><font size="3">{{dbServer.dbDisplayName}}</font></button><br>
 								<b>{{dbServer.dbType}}</b><br>
 								<div class="serverDescription">{{dbServer.dbDescription}}</div>
 							</div>
@@ -42,5 +42,8 @@
 			</table>
 		</div>
 	</fieldset>
+	<br>
+	<div data-ui-view="schema">
+	</div>
 </body>
 </html>

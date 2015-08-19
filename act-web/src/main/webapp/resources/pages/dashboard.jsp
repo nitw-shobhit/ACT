@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="<%= request.getContextPath()%>/resources/css/ui.fancytree.css" >
 	<link rel="stylesheet" href="<%= request.getContextPath()%>/resources/css/act.css">
 	<link rel="stylesheet" href="<%= request.getContextPath()%>/resources/css/icons/flaticon.css">
+	<link rel="stylesheet" href="<%= request.getContextPath()%>/resources/css/angular.treeview.css">
 	<script src="<%= request.getContextPath()%>/resources/js/jquery-1.11.1.min.js"></script>
 	<script src="<%= request.getContextPath()%>/resources/js/bootstrap.js"></script>
 	<script src="<%= request.getContextPath()%>/resources/js/angular.min.js"></script>
@@ -24,6 +25,7 @@
 	<script src="<%= request.getContextPath()%>/resources/js/act.js"></script>
     <script src="<%= request.getContextPath()%>/resources/js/ui-bootstrap-tpls-0.13.0.js"></script>	
     <script src="<%= request.getContextPath()%>/resources/js/angular-table.js"></script>
+    <script src="<%= request.getContextPath()%>/resources/js/angular.treeview.js"></script>
 	<link rel="icon" type="image/x-icon" href="<%= request.getContextPath()%>/resources/images/favicon.ico" />
 </head>
 <body>
