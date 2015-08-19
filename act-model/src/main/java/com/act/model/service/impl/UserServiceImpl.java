@@ -15,4 +15,9 @@ public class UserServiceImpl implements UserService {
 		return userBean;
 	}
 
+	@Override
+	public void updateUserProfile(UserBean userBean) {
+		// TODO Auto-generated method stub
+		
+	}
 }

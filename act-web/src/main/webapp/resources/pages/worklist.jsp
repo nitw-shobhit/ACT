@@ -28,7 +28,7 @@
  				</tr>
  			</tbody>
  		</table>
- 		<at-pagination at-list="serverList" at-config="config"></at-pagination>
+ 		<at-pagination at-list="worklist" at-config="config"></at-pagination>
  	</fieldset>
 </body>
 </html>

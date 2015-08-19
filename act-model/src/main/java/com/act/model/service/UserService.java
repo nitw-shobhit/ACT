@@ -6,4 +6,6 @@ public interface UserService {
 
 	UserBean validateLogin(UserBean userBean);
 
+	void updateUserProfile(UserBean userBean);
+
 }

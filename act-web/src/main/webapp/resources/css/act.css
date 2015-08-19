@@ -175,6 +175,12 @@
 	width: 220px;
 	font-size: 10px;
 }
+
+.errorPanelDropdown {
+	width: 996px;
+	font-size: 10px;
+	background-color: red;
+}
 .userInfoTable {
 	vertical-align: top;
 	margin: 5px;
@@ -245,4 +251,20 @@ legend {
 .worklistBox {
 	height: 100%;
 	width: 100%;
+}
+.overlay-panel {
+	position: absolute;
+}
+.errorSuccessPanel {
+	width: 1000px;
+}
+.successPanelIcon {
+	 color: #3c763d;
+	 margin-top:2px;
+	 margin-right: 5px;
+}
+.errorPanelIcon {
+	 color: #a94442;
+	 margin-top:2px;
+	 margin-right: 5px;
 }

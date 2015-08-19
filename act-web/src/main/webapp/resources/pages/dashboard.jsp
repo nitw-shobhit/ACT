@@ -35,6 +35,18 @@
 				<%@include file="dashboard/userInfo.jsp" %>
 			</div>
 		</div>
+		<div data-ng-show="successBoxFlag" class="alert alert-success overlay-panel errorSuccessPanel" data-ng-controller="rootController">
+		    <button type="button" class="close" data-ng-click="closePanel()">x</button>
+		    <span class="glyphicon glyphicon-ok successPanelIcon"></span>
+		    <strong>SUCCESS! </strong>
+		    {{panelMessage}}
+		</div>
+		<div data-ng-show="errorBoxFlag" class="alert alert-danger overlay-panel errorSuccessPanel" data-ng-controller="rootController">
+		    <button type="button" class="close" data-ng-click="closePanel()">x</button>
+		    <span class="glyphicon glyphicon-remove errorPanelIcon"></span>
+		    <strong>FAILURE! </strong>
+		    {{panelMessage}}
+		</div>
 		<div class="menuBox" data-ui-view="menu"></div>
 		<div class="contentBox">
 			<div data-ui-view="content" class="content">

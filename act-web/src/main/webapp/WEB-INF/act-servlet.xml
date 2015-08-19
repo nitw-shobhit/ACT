@@ -27,6 +27,9 @@
 	<bean name="/actLogin/*" class="com.act.web.controller.LoginController">
 		<property name="userService" ref="userService" />
 	</bean>
+	<bean name="/actUser/*" class="com.act.web.controller.UserController">
+		<property name="userService" ref="userService" />
+	</bean>
 	<bean name="/actServer/*" class="com.act.web.controller.WebServerController">
 		<property name="webServerService" ref="webServerService" />
 	</bean>

@@ -3,6 +3,13 @@
  */
 var module = angular.module('act-app', ['ui.router', 'ngDialog', 'pascalprecht.translate', 'ui.bootstrap', 'angular-table']);
 
+//ROOT SCOPE ELEMENTS
+module.run(function($rootScope) {
+    $rootScope.successBoxFlag = false;
+    $rootScope.errorBoxFlag = false;
+    $rootScope.panelMessage = "";
+})
+
 //STATE ROUTES
 module.config(function ($stateProvider, $urlRouterProvider, $provide) {
 	$stateProvider.state('dboard',
@@ -76,12 +83,25 @@ module.config(function ($stateProvider, $urlRouterProvider, $provide) {
 	$urlRouterProvider.otherwise("");
 });
 
+//SERVICES
+
+
+
 //DIRECTIVES
 
 
 
 //CONTROLLERS
-module.controller("userInfoController", function ($scope, $state, ngDialog) {
+module.controller("rootController", function ($scope, $rootScope) {
+	
+	$scope.closePanel = function() {
+    	$rootScope.successBoxFlag = false;
+        $rootScope.errorBoxFlag = false;
+        $rootScope.panelMessage = "";
+    };
+});
+
+module.controller("userInfoController", function ($scope, $state, ngDialog, $rootScope) {
 
 	$scope.logout = function() {
 		window.location.href="/act-web/login.jsp";
@@ -105,6 +125,12 @@ module.controller("userInfoController", function ($scope, $state, ngDialog) {
 			}
 		});
 	}
+	
+	$scope.updateProfile = function() {
+		ngDialog.close();
+		$rootScope.panelMessage = "User profile updated."
+		$rootScope.successBoxFlag = true;
+	}
 });
 
 module.controller("menuController", function ($scope, $state) {
@@ -125,7 +151,7 @@ module.controller("menuController", function ($scope, $state) {
 module.controller("homeController", function ($scope, $state) {
 });
 
-module.controller("serverController", function ($scope, $state) {
+module.controller("serverController", function ($scope, $state, $rootScope) {
 	
 	$.ajax({
         url: '/act-web/actServer/getAllWebServers.do',
@@ -150,9 +176,13 @@ module.controller("serverController", function ($scope, $state) {
 	        dataType: 'json',
 	        async: false,
 	        success: function(data) {
+		    	$rootScope.panelMessage = "Server started successfully."
+			    $rootScope.successBoxFlag = true;
 	        }
 	    }).fail(function() {
 	    	$scope.loading = false;
+	    	$rootScope.panelMessage = "Server startup failed."
+	    	$rootScope.errorBoxFlag = true;
 	    });
 	};
 	

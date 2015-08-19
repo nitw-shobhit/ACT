@@ -70,10 +70,10 @@
 					</tr>
 					<tr>
 						<td style="padding: 10px; float: right;">
-							<button class="btn btn-primary btn-xs">Update</button>
+							<button class="btn btn-primary btn-xs" data-ng-click="updateProfile()">Update</button>
 						</td>
 						<td style="padding: 10px;">
-							<button class="btn btn-default btn-xs" style="float: left;">Cancel</button>
+							<button class="btn btn-default btn-xs" data-ng-click="closeThisDialog('button')" style="float: left;">Cancel</button>
 						</td>
 						<td style="padding: 10px;">
 						</td>
